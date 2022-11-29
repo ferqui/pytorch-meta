@@ -1,7 +1,8 @@
 import torchvision.transforms.functional as F
+from torchvision.transforms.functional import InterpolationMode
 
 class Rotation(object):
-    def __init__(self, angle, resample=False, expand=False, center=None):
+    def __init__(self, angle, resample=InterpolationMode.NEAREST, expand=False, center=None):
         super(Rotation, self).__init__()
         if isinstance(angle, (list, tuple)):
             self._angles = angle
